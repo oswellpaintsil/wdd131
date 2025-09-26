@@ -13,6 +13,10 @@
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
+    
+    /* Font variables */
+    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-heading: 'Merriweather', 'Georgia', serif;
 }
 
 /* Reset and Base Styles */
@@ -23,7 +27,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--primary-white);
@@ -44,8 +48,10 @@ header {
 }
 
 header h1 {
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
+    margin: 0;
 }
 
 /* Main Layout - Mobile First */
@@ -66,6 +72,8 @@ main {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+    max-height: 400px; /* Prevent excessive height on large screens */
 }
 
 /* Data Section */
@@ -84,6 +92,7 @@ main {
     text-align: center;
     border-bottom: 2px solid var(--ghana-gold);
     padding-bottom: var(--spacing-xs);
+    font-family: var(--font-heading);
 }
 
 .data-grid {
@@ -128,6 +137,7 @@ main {
     position: relative;
     border-bottom: 2px solid var(--ghana-gold);
     padding-bottom: var(--spacing-xs);
+    font-family: var(--font-heading);
 }
 
 .weather-content {
@@ -266,6 +276,24 @@ footer p {
     }
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+    .hero img {
+        max-height: 250px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet optimization */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero img {
+        max-height: 300px;
+    }
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -296,34 +324,15 @@ textarea:focus {
     }
 }
 
-
-.hero img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    /* Ensure proper loading and display */
-    object-fit: cover;
-    max-height: 400px; /* Prevent excessive height on large screens */
-}
-
-/* Mobile optimization */
-@media (max-width: 480px) {
-    .hero img {
-        max-height: 250px;
+/* Print styles */
+@media print {
+    .weather-icon {
+        display: none;
     }
-}
-
-/* Tablet optimization */
-@media (min-width: 481px) and (max-width: 768px) {
-    .hero img {
-        max-height: 300px;
-    }
-}
-
-/* Desktop optimization */
-@media (min-width: 769px) {
-    .hero img {
-        max-height: 400px;
+    
+    footer {
+        background: none;
+        color: var(--text-dark);
+        border-top: 1px solid var(--text-dark);
     }
 }

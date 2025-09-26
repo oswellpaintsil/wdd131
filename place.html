@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ghana</title>
+    <title>Ghana - The Gateway to Africa | WDD131 Country Page</title>
     <meta
       name="description"
-      content="Information about Ghana - The Gateway to Africa"
+      content="Explore Ghana's rich culture, geography, and climate. Learn about Ghana's population, capital city Accra, languages, currency, and current weather conditions."
     />
     <meta name="author" content="Oswell Paintsil" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="styles/place.css" />
     <script src="scripts/place.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Ghana</h1>
+      <h1>Ghana - The Gateway to Africa</h1>
     </header>
 
     <main>
       <section class="hero">
-        <picture>
-          <source srcset="images/ghana-large.webp" media="min-width: 800px" />
-          <source srcset="images/ghana-medium.webp" media="min-width: 612px" />
-          <img
-            src="images/ghana-small.webp"
-            alt="Beautiful landscape of Ghana with coastline"
-            width="400"
-            height="200"
-          />
-        </picture>
+        <img
+          src="images/ghana-small.webp"
+          alt="Beautiful landscape of Ghana with coastline and mountains"
+          srcset="
+            images/ghana-small.webp  480w,
+            images/ghana-medium.webp 612w,
+            images/ghana-large.webp  800w
+          "
+          sizes="(max-width: 480px) 480px,
+                       (max-width: 768px) 612px,
+                       800px"
+          width="800"
+          height="451"
+        />
       </section>
 
       <section class="data">
-        <h2>Data</h2>
+        <h2>Country Data</h2>
         <div class="data-grid">
           <div class="data-item">
             <span class="label">Area:</span>
@@ -71,7 +83,7 @@
       </section>
 
       <section class="weather">
-        <h2>Weather</h2>
+        <h2>Current Weather</h2>
         <div class="weather-content">
           <div class="weather-icon">
             <svg
@@ -80,6 +92,7 @@
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 d="M6 16C3.23858 16 1 13.7614 1 11C1 8.23858 3.23858 6 6 6C7.12557 6 8.16474 6.37209 9 7.00098M6 2V6M17 16C19.7614 16 22 13.7614 22 11C22 8.23858 19.7614 6 17 6C15.8744 6 14.8353 6.37209 14 7.00098M17 2V6M6 20H18C19.1046 20 20 19.1046 20 18C20 16.8954 19.1046 16 18 16H6C4.89543 16 4 16.8954 4 18C4 19.1046 4.89543 20 6 20Z"
@@ -100,7 +113,7 @@
               <span class="value">Partly Cloudy</span>
             </div>
             <div class="weather-item">
-              <span class="label">Wind:</span>
+              <span class="label">Wind Speed:</span>
               <span class="value" id="wind-speed">12</span> km/h
             </div>
             <div class="weather-item">
@@ -114,7 +127,7 @@
 
     <footer>
       <p>
-        &copy;<span id="current-year">2024</span> 💡 Oswell Paintsil 💡 Ghana
+        &copy; <span id="current-year">2024</span> 💡 Oswell Paintsil 💡 Ghana
       </p>
       <p>Last Modification: <span id="last-modified"></span></p>
     </footer>

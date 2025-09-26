@@ -1,10 +1,16 @@
-// Wind chill calculation function (one line as required)
+/**
+ * Wind chill calculation function (one line as required)
+ * @param {number} temperature - Temperature in Celsius
+ * @param {number} windSpeed - Wind speed in km/h
+ * @returns {number} Wind chill factor in Celsius
+ */
 function calculateWindChill(temperature, windSpeed) {
-    // Metric wind chill formula for °C (temperature <= 10°C and windSpeed > 4.8 km/h)
     return 13.12 + (0.6215 * temperature) - (11.37 * Math.pow(windSpeed, 0.16)) + (0.3965 * temperature * Math.pow(windSpeed, 0.16));
 }
 
-// Update wind chill display
+/**
+ * Update wind chill display based on current weather conditions
+ */
 function updateWindChill() {
     const temperature = 28; // °C (static value - does NOT meet condition: > 10°C)
     const windSpeed = 12;   // km/h (static value meeting condition: > 4.8 km/h)
@@ -27,7 +33,9 @@ function updateWindChill() {
     }
 }
 
-// Update footer with current year and last modified date
+/**
+ * Update footer with current year and last modified date
+ */
 function updateFooter() {
     // Current year
     const currentYearElement = document.getElementById('current-year');
@@ -47,8 +55,13 @@ function updateFooter() {
     lastModifiedElement.textContent = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+/**
+ * Initialize the page when DOM is fully loaded
+ */
+function initializePage() {
     updateWindChill();
     updateFooter();
-});
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializePage);
