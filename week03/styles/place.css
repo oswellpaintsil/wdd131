@@ -1,0 +1,329 @@
+/* CSS Variables - Ghana flag colors: Red, Gold, Green, Black Star */
+:root {
+    --ghana-red: #CE1126;
+    --ghana-gold: #FCD116;
+    --ghana-green: #006B3F;
+    --ghana-black: #000000;
+    --primary-white: #FFFFFF;
+    --text-dark: #333333;
+    --bg-light: #F8F9FA;
+    --border-color: #DEE2E6;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--primary-white);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+/* Header with Ghana flag colors */
+header {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(135deg, var(--ghana-red), var(--ghana-gold), var(--ghana-green));
+    color: var(--primary-white);
+    margin: 0 calc(-1 * var(--spacing-sm));
+    border-radius: 0 0 8px 8px;
+    text-shadow: 1px 1px 2px var(--ghana-black);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Main Layout - Mobile First */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Hero Section */
+.hero {
+    order: 1;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Data Section */
+.data {
+    order: 2;
+    background: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.data h2 {
+    color: var(--ghana-red);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--ghana-gold);
+    padding-bottom: var(--spacing-xs);
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+}
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-item:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: var(--ghana-green);
+}
+
+.value {
+    color: var(--text-dark);
+}
+
+/* Weather Section */
+.weather {
+    order: 3;
+    background: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.weather h2 {
+    color: var(--ghana-red);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    position: relative;
+    border-bottom: 2px solid var(--ghana-gold);
+    padding-bottom: var(--spacing-xs);
+}
+
+.weather-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.weather-icon {
+    flex-shrink: 0;
+}
+
+.weather-icon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--ghana-green);
+}
+
+.weather-info {
+    flex: 1;
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.weather-item:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    border-top: 2px solid var(--ghana-red);
+    margin-top: var(--spacing-lg);
+    color: var(--text-dark);
+    background: linear-gradient(to right, var(--ghana-red), var(--ghana-gold), var(--ghana-green));
+    color: var(--primary-white);
+    margin: 0 calc(-1 * var(--spacing-sm));
+    border-radius: 8px 8px 0 0;
+}
+
+footer p {
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 1px 1px 1px var(--ghana-black);
+}
+
+/* Media Query for Wider Views (768px and up) */
+@media (min-width: 768px) {
+    body {
+        padding: 0 var(--spacing-md);
+    }
+
+    header {
+        margin: 0 calc(-1 * var(--spacing-md));
+        border-radius: 0 0 12px 12px;
+    }
+
+    footer {
+        margin: 0 calc(-1 * var(--spacing-md));
+        border-radius: 12px 12px 0 0;
+    }
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    /* Wide layout: Data on left, Hero in middle, Weather on right */
+    .hero {
+        order: 2;
+        flex: 2;
+        min-width: 300px;
+    }
+
+    .data {
+        order: 1;
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .weather {
+        order: 3;
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hide SVG in wider view, show pseudo-element emoticon */
+    .weather-icon {
+        display: none;
+    }
+
+    .weather h2::after {
+        content: "⛅";
+        margin-left: var(--spacing-sm);
+        font-size: 1.2em;
+    }
+
+    .weather-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+    }
+
+    .weather-item {
+        justify-content: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1024px) {
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    main {
+        gap: var(--spacing-lg);
+    }
+    
+    .hero {
+        flex: 3;
+    }
+    
+    .data, .weather {
+        flex: 1;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--ghana-gold);
+    outline-offset: 2px;
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-dark: #000000;
+        --border-color: #000000;
+    }
+    
+    .label {
+        font-weight: 800;
+    }
+}
+
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    /* Ensure proper loading and display */
+    object-fit: cover;
+    max-height: 400px; /* Prevent excessive height on large screens */
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+    .hero img {
+        max-height: 250px;
+    }
+}
+
+/* Tablet optimization */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero img {
+        max-height: 300px;
+    }
+}
+
+/* Desktop optimization */
+@media (min-width: 769px) {
+    .hero img {
+        max-height: 400px;
+    }
+}
