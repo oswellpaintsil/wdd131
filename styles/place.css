@@ -305,7 +305,7 @@ footer p {
 }
 
 /* High contrast support */
-@media (prefers-contrast: high) {
+@media (prefers-contrast: more) {
     :root {
         --text-dark: #000000;
         --border-color: #000000;
