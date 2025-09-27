@@ -15,7 +15,7 @@
     --spacing-xl: 3rem;
     
     /* Font variables */
-    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-primary: "Roboto", sans-serif;
     --font-heading: 'Merriweather', 'Georgia', serif;
 }
 
