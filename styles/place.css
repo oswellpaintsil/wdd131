@@ -1,13 +1,13 @@
 /* CSS Variables - Ghana flag colors: Red, Gold, Green, Black Star */
 :root {
-    --ghana-red: #CE1126;
-    --ghana-gold: #FCD116;
-    --ghana-green: #006B3F;
+    --ghana-red: #ce1126;
+    --ghana-gold: #fcd116;
+    --ghana-green: #006b3f;
     --ghana-black: #000000;
-    --primary-white: #FFFFFF;
+    --primary-white: #ffffff;
     --text-dark: #333333;
-    --bg-light: #F8F9FA;
-    --border-color: #DEE2E6;
+    --bg-light: #f8f9fa;
+    --border-color: #dee2e6;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -71,9 +71,9 @@ main {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     object-fit: cover;
-    max-height: 400px; /* Prevent excessive height on large screens */
+    max-height: 400px;
 }
 
 /* Data Section */
@@ -177,16 +177,15 @@ footer {
     padding: var(--spacing-md) 0;
     border-top: 2px solid var(--ghana-red);
     margin-top: var(--spacing-lg);
-    color: var(--text-dark);
     background: linear-gradient(to right, var(--ghana-red), var(--ghana-gold), var(--ghana-green));
     color: var(--primary-white);
     margin: 0 calc(-1 * var(--spacing-sm));
     border-radius: 8px 8px 0 0;
+    text-shadow: 1px 1px 1px var(--ghana-black);
 }
 
 footer p {
     margin-bottom: var(--spacing-xs);
-    text-shadow: 1px 1px 1px var(--ghana-black);
 }
 
 /* Media Query for Wider Views (768px and up) */
@@ -259,10 +258,6 @@ footer p {
 
 /* Large screen adjustments */
 @media (min-width: 1024px) {
-    .data-grid {
-        grid-template-columns: 1fr;
-    }
-    
     main {
         gap: var(--spacing-lg);
     }
@@ -294,7 +289,7 @@ footer p {
     }
 }
 
-/* Accessibility */
+/* Accessibility - Reduced motion */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -304,10 +299,7 @@ footer p {
 }
 
 /* Focus styles for accessibility */
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
+:focus {
     outline: 2px solid var(--ghana-gold);
     outline-offset: 2px;
 }
@@ -331,8 +323,9 @@ textarea:focus {
     }
     
     footer {
-        background: none;
-        color: var(--text-dark);
-        border-top: 1px solid var(--text-dark);
+        background: #ffffff;
+        color: #000000;
+        border-top: 1px solid #000000;
+        text-shadow: none;
     }
 }
