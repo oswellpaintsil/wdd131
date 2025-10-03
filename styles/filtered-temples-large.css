@@ -1,0 +1,86 @@
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+    
+    nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        box-shadow: none;
+    }
+    
+    nav a {
+        padding: 0.5rem 1rem;
+        border-bottom: none;
+        margin-left: 1rem;
+        border-radius: 4px;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .temple-image-container {
+        height: 180px;
+        padding: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Improved hover effects for desktop */
+    nav a:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+    }
+    
+    .temple-image-container {
+        height: 200px;
+        padding: 1.5rem;
+    }
+    
+    .temple-info {
+        padding: 2rem;
+    }
+    
+    .temple-name {
+        font-size: 1.6rem;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1440px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+    
+    main {
+        padding: 2rem;
+    }
+    
+    .temple-image-container {
+        height: 220px;
+        padding: 1.5rem;
+    }
+    
+    .temple-info {
+        padding: 2.5rem;
+    }
+    
+    .temple-name {
+        font-size: 1.7rem;
+    }
+    
+    .temple-details p {
+        font-size: 1rem;
+    }
+}
