@@ -47,16 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set today's date as default for installation date
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('installationDate').value = today;
-    
-    // Add keyboard navigation for rating stars
-    const ratingInputs = document.querySelectorAll('.rating-container input');
-    ratingInputs.forEach((input, index) => {
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft' && index < ratingInputs.length - 1) {
-                ratingInputs[index + 1].focus();
-            } else if (e.key === 'ArrowRight' && index > 0) {
-                ratingInputs[index - 1].focus();
-            }
-        });
-    });
 });

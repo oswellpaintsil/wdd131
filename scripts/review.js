@@ -19,12 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
     if (countElement) {
         countElement.textContent = reviewCount.toLocaleString();
     }
-    
-    // Add animation to counter
-    setTimeout(() => {
-        countElement.style.transform = 'scale(1.1)';
-        setTimeout(() => {
-            countElement.style.transform = 'scale(1)';
-        }, 200);
-    }, 100);
 });
