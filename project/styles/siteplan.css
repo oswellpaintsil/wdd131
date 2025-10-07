@@ -1,0 +1,252 @@
+/* Color Schema - Applied to document as required */
+:root {
+    --primary: #F9A825; /* Ghana gold - used for headings */
+    --secondary: #008751; /* Ghana green - used for header and accents */
+    --accent: #CE1126; /* Ghana red - used for buttons and call-to-action */
+    --text-dark: #333333; /* Dark gray - used for body text */
+    --background-light: #F5F5F5; /* Light gray - used for background */
+    --white: #FFFFFF;
+}
+
+/* Typography - Applied to document as required */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Body font */
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Heading font */
+    color: var(--primary);
+}
+
+header {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--white);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+section {
+    background: var(--white);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-schema {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.color-box {
+    width: 180px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.color-box span {
+    display: block;
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
+.color-primary {
+    background-color: var(--primary);
+}
+
+.color-secondary {
+    background-color: var(--secondary);
+}
+
+.color-accent {
+    background-color: var(--accent);
+}
+
+.color-dark {
+    background-color: var(--text-dark);
+}
+
+.color-light {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    border: 1px solid #ddd;
+}
+
+.wireframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.wireframe {
+    flex: 1;
+    min-width: 300px;
+    border: 2px solid var(--secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.wireframe-box {
+    background-color: #f8f9fa;
+    border: 1px dashed #6c757d;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Mobile wireframe specific styles */
+.header-box {
+    height: 60px;
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.nav-box {
+    height: 40px;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.hero-box {
+    height: 200px;
+    background-color: #e9ecef;
+}
+
+.spotlight-box {
+    height: 150px;
+    background-color: #d1ecf1;
+}
+
+.links-box {
+    height: 120px;
+    background-color: #d4edda;
+}
+
+.footer-box {
+    height: 80px;
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+/* Desktop wireframe specific styles */
+.header-desktop {
+    height: 80px;
+    display: flex;
+    background-color: var(--secondary);
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.logo-area {
+    width: 30%;
+    background-color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-area {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-desktop {
+    height: 300px;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.hero-image {
+    width: 60%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-text {
+    width: 40%;
+    background-color: #d1ecf1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-desktop {
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.main-content {
+    width: 70%;
+    height: 200px;
+    background-color: #f8d7da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar {
+    width: 30%;
+    height: 200px;
+    background-color: #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 2px solid var(--secondary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wireframe-container {
+        flex-direction: column;
+    }
+    
+    .wireframe {
+        min-width: 100%;
+    }
+    
+    .color-schema {
+        justify-content: center;
+    }
+}
