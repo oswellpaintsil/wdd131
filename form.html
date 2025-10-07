@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Review Form | Share Your Experience</title>
+    <meta
+      name="description"
+      content="Submit a product review for our innovative products. Share your experience with flux capacitors, power laces, time circuits and more."
+    />
+    <link rel="stylesheet" href="styles/form.css" />
+    <script src="scripts/form.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header role="banner">
+        <h1>Product Review</h1>
+        <p>Share your experience with our products</p>
+      </header>
+
+      <main role="main">
+        <form
+          id="reviewForm"
+          method="get"
+          action="review.html"
+          aria-labelledby="form-title"
+        >
+          <div class="form-group">
+            <label for="productName" class="required">Product Name</label>
+            <select
+              id="productName"
+              name="productName"
+              required
+              aria-required="true"
+            >
+              <option value="" disabled selected>Select a Product ...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rating" class="required">Overall Rating</label>
+            <div
+              class="rating-container"
+              role="radiogroup"
+              aria-labelledby="rating-label"
+            >
+              <input
+                type="radio"
+                id="star5"
+                name="rating"
+                value="5"
+                required
+                aria-required="true"
+              />
+              <label for="star5" aria-label="5 stars">★</label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" aria-label="4 stars">★</label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" aria-label="3 stars">★</label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" aria-label="2 stars">★</label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" aria-label="1 star">★</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="installationDate" class="required"
+              >Date of Installation</label
+            >
+            <input
+              type="date"
+              id="installationDate"
+              name="installationDate"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label
+              >Which features did you find useful in the product? (Check all
+              that apply)</label
+            >
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="durability"
+                  name="features"
+                  value="Durability"
+                />
+                <label for="durability">Durability</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="easeOfUse"
+                  name="features"
+                  value="Ease of Use"
+                />
+                <label for="easeOfUse">Ease of Use</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="performance"
+                  name="features"
+                  value="Performance"
+                />
+                <label for="performance">Performance</label>
+              </div>
+              <div class="checkbox-item">
+                <input
+                  type="checkbox"
+                  id="design"
+                  name="features"
+                  value="Design"
+                />
+                <label for="design">Design</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="writtenReview"
+              >Written Review <span class="optional">(Optional)</span></label
+            >
+            <textarea
+              id="writtenReview"
+              name="writtenReview"
+              rows="5"
+              aria-describedby="review-help"
+            ></textarea>
+            <small id="review-help" class="help-text"
+              >Share detailed feedback about your experience (optional)</small
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="userName"
+              >Your Name <span class="optional">(Optional)</span></label
+            >
+            <input
+              type="text"
+              id="userName"
+              name="userName"
+              aria-describedby="name-help"
+            />
+            <small id="name-help" class="help-text"
+              >Your name will be displayed with the review (optional)</small
+            >
+          </div>
+
+          <button type="submit" class="submit-btn">Post Review</button>
+        </form>
+      </main>
+
+      <footer role="contentinfo">
+        <p>© 2024 Oswell Paintsil</p>
+        <p>Ghana</p>
+        <p>Last Modification: 02/26/2024 13:56:10</p>
+      </footer>
+    </div>
+  </body>
+</html>
